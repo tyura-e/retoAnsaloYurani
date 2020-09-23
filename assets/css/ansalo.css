@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Kufam&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+/* .container {
+    font-family: 'Kufam', cursive;
+} */
+
+.main {
+    vertical-align: middle;
+}
+
+.footer {
+    box-shadow: 0 0 10px #777;
+}
+
+
+
+.retro {
+    font-family: 'Courier Prime', monospace;
+    color: #40f2fe;
+
+    background-image: url(/assets/img/pacman.jpg);
+}
+
+.retro button {
+    color: #fc0868;
+    font-weight: bold;
+}
+
+
+.dark {
+    font-family: 'Kufam', cursive;
+    background-color: rgb(0, 0, 0);
+    color: rgb(199, 138, 24);
+}
+
+.dark button {
+    color: rgb(199, 138, 24);
+    font-weight: bold;
+}
+
+.tam {
+    width: 70px;
+    height: 60px;
+    border-radius: 50px;
+}

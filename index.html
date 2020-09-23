@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto Ánsalo</title>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- CSS PROPIO -->
+    <link rel="stylesheet" href="./assets/css/ansalo.css">
+
+    <!-- ÍCONO -->
+    <link rel="shortcut icon" href="./assets/img/challenges.png" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <div class="container-fluid" id="container">
+
+        <main class="main">
+            <h1 class="text-center mb-5">Reto Ánsalo</h1>
+            <!-- INPUTS -->
+            <div class="d-flex justify-content-center m-3">
+                <h3 class="mr-5"> Letras</h3>
+                <input class="ml-5" id="text" type="text" readonly>
+            </div>
+            <div class="d-flex justify-content-center m-3">
+                <h3 class="mr-2"> Números</h3>
+                <input class="ml-5" id="number" type="text" readonly>
+            </div>
+
+            <!-- TEMAS -->
+
+            <!-- SWITCH -->
+            <div class=" custom-control custom-switch w-25 mx-auto mb-3 ">
+                <input type="checkbox" class="custom-control-input" id="original">
+                <label class="custom-control-label" for="original"> Activar tema original</label>
+            </div>
+            <div class="retro custom-control custom-switch w-25 mx-auto mb-3">
+                <input type="checkbox" class="custom-control-input" id="retro">
+                <label class="custom-control-label" for="retro"> Activar tema Retro</label>
+            </div>
+            <div class=" dark custom-control custom-switch w-25 mx-auto mb-3">
+                <input type="checkbox" class="custom-control-input" id="dark">
+                <label class="custom-control-label" for="dark">Activar tema oscuro</label>
+            </div>
+
+
+            <!-- BOTONES -->
+            <div class="row align-items-center justify-content-center">
+                <div class="col-sm-8 d-flex justify-content-center">
+                    <button class="m-2 tam " onclick="buttomA('A')"> A - 1</button>
+                    <button class="m-2 tam " onclick="buttomB('B')"> B - 2</button>
+                    <button class="m-2 tam " onclick="buttomC('C')"> C - 3</button> </div>
+                <div class="col-sm-8 d-flex justify-content-center">
+                    <button class="m-2 tam " onclick="buttomD('D')"> D - 4 </button>
+                    <button class="m-2 tam " onclick="buttomE('E')"> E - 5 </button>
+                    <button class="m-2 tam " onclick="buttomF('F')"> F - 6</button> </div>
+                <div class="col-sm-8 d-flex justify-content-center">
+                    <button class="m-2 tam " onclick="buttomG('G')"> G - 7</button>
+                    <button class="m-2 tam " onclick="buttomH('H')"> H - 8 </button>
+                    <button class="m-2 tam " onclick="buttomI('I')"> I - 9 </button>
+
+                </div>
+                <div class="col-sm-8 d-flex justify-content-center">
+                    <button class="m-2 tam" onclick="btnCalc()">--- </button>
+                    <button class="m-2 tam " onclick="buttomJ('J')"> J - 0 </button>
+                    <button class="m-2 tam"> Reset</button>
+                </div>
+            </div>
+
+
+
+        </main>
+
+        <footer class="footer">
+            <div class="text-center ">
+                <h5>Realizado por Yurani Estrada Ruiz</h5>
+                <p>Septiembre 21 de 2020</p>
+            </div>
+
+        </footer>
+    </div>
+
+
+    <!-- JS BOOTSTRAP -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+
+    <!-- SWEETALERT -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- JS PROPIO -->
+    <script src="./assets/js/script.js"> </script>
+    <script src="./assets/js/inputs.js">
+        /*         function buttomA(string) {
+            if (text.value.length == 0) {
+                text.value = string;
+            }
+            if (text.value.length >= 8) {
+                alert("Excelente! haz completado el nivel de las letras");
+                buttom1('1');
+            }
+        }
+
+        function buttomB(string) {
+            if (text.value.length == 0) {
+                alert("Debe ingresar la letra a");
+            } else {
+                if (text.value.length == 1) {
+                    string = text.value + string;
+                    text.value = string;
+                }
+            }
+            if (text.value.length >= 8) {
+                buttom2('2');
+            }
+
+        }
+
+        function buttomC(string) {
+            if (text.value.length == 0 || text.value.length <= 1) {
+                alert("Debe ingresar las letras a y b");
+            } else {
+                if (text.value.length == 2) {
+                    string = text.value + string;
+                    text.value = string;
+                }
+            }
+        }
+
+        function buttomD(string) {
+            if (text.value.length == 0 || text.value.length <= 2) {
+                alert("Debe ingresar las letras a, b y c");
+            } else {
+                if (text.value.length == 3) {
+                    string = text.value + string;
+                    text.value = string;
+                }
+            }
+        }
+
+        function buttomE(string) {
+            if (text.value.length == 0 || text.value.length <= 3) {
+                alert("Debe ingresar las letras a, b, c y d");
+            } else {
+                if (text.value.length == 4) {
+                    string = text.value + string;
+                    text.value = string;
+                }
+            }
+        }
+
+        function buttomF(string) {
+            if (text.value.length == 0 || text.value.length <= 4) {
+                alert("Debe ingresar las letras a, b, c, d y e");
+            } else {
+                if (text.value.length == 5) {
+                    string = text.value + string;
+                    text.value = string;
+                }
+            }
+        }
+
+        function buttomG(string) {
+            if (text.value.length == 0 || text.value.length <= 5) {
+                alert("Debe ingresar las letras a, b, c, d, e y f");
+            } else {
+                if (text.value.length == 6) {
+                    string = text.value + string;
+                    text.value = string;
+                }
+            }
+        }
+
+        function buttomH(string) {
+            if (text.value.length == 0 || text.value.length <= 6) {
+                alert("Debe ingresar las letras a, b, c, d, e, f y g");
+            } else {
+                if (text.value.length == 7) {
+                    string = text.value + string;
+                    text.value = string;
+                }
+            }
+        }
+
+        function buttomI(string) {
+            if (text.value.length == 0 || text.value.length <= 7) {
+                alert("Debe ingresar las letras a, b, c, d, e, f, g y h");
+            } else {
+                if (text.value.length == 8) {
+                    string = text.value + string;
+                    text.value = string;
+                }
+            }
+        }
+
+        function buttomJ(string) {
+            if (text.value.length == 0 || text.value.length <= 8) {
+                alert("Debe ingresar las letras a, b, c, d, e, f, g, h y i");
+            } else {
+                if (text.value.length == 9) {
+                    string = text.value + string;
+                    text.value = string;
+                }
+            }
+        }
+
+        function buttom1(string) {
+            number.value = string
+
+        }
+
+        function buttom2(string) {
+            if (number.value.length == 1) {
+                string = number.value + string;
+                number.value = string
+            }
+
+        } */
+    </script>
+</body>
+
+</html>
