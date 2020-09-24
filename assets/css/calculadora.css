@@ -1,6 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Kufam&display=swap');
 
-
-.container {
+body {
     font-family: 'Kufam', cursive;
+    background-color: rgb(36, 36, 36);
+    color: white;
+}
+
+.fondo {
+    background-color: rgb(36, 36, 36);
+
+}
+
+.boton1 {
+    width: 8%;
+    height: 40px;
+    background-color: rgb(36, 36, 36);
+    border: none;
+
+}
+
+.boton1:hover {
+    background-color: rgba(85, 85, 85, 0.693);
+}
+
+.boton {
+    width: 24%;
+    height: 60px;
+    background: rgb(22, 22, 22);
+    border: 1px solid #ffffff;
+    /* background-color: #000000; */
+}
+
+.boton:hover {
+    background-color: rgba(85, 85, 85, 0.693);
+}
+
+.boton2 {
+    width: 24%;
+    height: 60px;
+    background: rgb(0, 0, 0);
+    border: 1px solid #ffffff;
+    /* background-color: #000000; */
+}
+
+.boton2:hover {
+    background-color: rgba(85, 85, 85, 0.693);
+}
+
+.boton3 {
+    width: 40%;
+    height: 60px;
+    color: white;
+    background-color: rgb(36, 36, 36);
+    border: none;
+
+}
+
+/* .boton3:hover {
+    color: rgba(85, 85, 85, 0.693);
+} */
+
+.boton3:active {
+    border: none;
 }
